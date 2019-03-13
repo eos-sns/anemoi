@@ -3,14 +3,12 @@
 	<em>Translates download links to actual files</em></br>
 
 
-<a href="https://github.com/eos-sns/anemoi/pulls"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a> <a href="https://github.com/eos-sns/anemoi/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://www.python.org/download/releases/3.6.0/"><img src="https://img.shields.io/badge/Python-3.6-blue.svg"></a> <a href="https://saythanks.io/to/sirfoga"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!" /></a>
+<a href="https://github.com/eos-sns/anemoi/pulls"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a> <a href="https://github.com/eos-sns/anemoi/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://saythanks.io/to/sirfoga"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!" /></a>
 </div>
 
 
 ## Use case
-You want to serve stuff like `server.com/download?token=327892`. You have
-
-- installed the [required backend](https://github.com/eos-sns/astraeus)
+You want to serve stuff like `server.com/download?token=327892`. You have a database and input data via [astraeus](https://github.com/eos-sns/astraeus)
 
 
 ## Install
