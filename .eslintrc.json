@@ -7,6 +7,7 @@
     "brace-style": [
       2,
       "stroustrup"
-    ]
+    ],
+    "object-shorthand": "off"
   }
 }
