@@ -10,6 +10,21 @@
 ## Use case
 You want to serve stuff like `server.com/download?token=327892`. You have a database and input data via [astraeus](https://github.com/eos-sns/astraeus)
 
+## Example
+```js
+app.get('/download', (req, res) => {
+  const downloadToken = req.query.token.toString();
+  const realDownload = new Anemoi().get(downloadToken); // it's a promise
+  realDownload.then((val) => {
+    if (val) {
+      res.download(val);
+    }
+    else {
+      res.sendStatus(403); // token is not valid
+    }
+  });
+});
+```
 
 ## Install
 ```bash

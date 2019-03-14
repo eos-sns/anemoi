@@ -3,6 +3,7 @@ const anemoi = require('./index');
 
 const app = express();
 const port = 8080;
+const downloadUrlParam = 'token'; // param in URL
 
 const retrieveActualLocation = (token) => {
   const anemoiClient = new anemoi.anemoi.Anemoi();
@@ -10,11 +11,15 @@ const retrieveActualLocation = (token) => {
 };
 
 app.get('/download', (req, res) => {
-  const downloadToken = req.query.token.toString();
-  const realDownload = retrieveActualLocation(downloadToken);
+  const downloadToken = req.query[downloadUrlParam].toString();
+  const realDownload = retrieveActualLocation(downloadToken); // it's a promise
   realDownload.then((val) => {
-    const realPath = `/home/${val}.txt`;
-    res.download(realPath);
+    if (val) {
+      res.download(val);
+    }
+    else {
+      res.sendStatus(403); // token is not valid
+    }
   });
 });
 
