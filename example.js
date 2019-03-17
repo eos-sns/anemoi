@@ -2,7 +2,7 @@ const express = require('express');
 const anemoi = require('./index');
 
 const app = express();
-const port = 8080;
+const port = 10001;
 const downloadUrlParam = 'token'; // param in URL
 
 const retrieveActualLocation = (token) => {
