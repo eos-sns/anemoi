@@ -4,10 +4,14 @@ const anemoi = require('./lib/anemoi');
 const app = express();
 const port = 10001;
 const downloadUrlParam = 'token'; // param in URL
+const anemoiClient = new anemoi.anemoi.MongoAnemoi('links', 'astraeus');
 
 const retrieveActualLocation = (token) => {
-  const anemoiClient = new anemoi.anemoi.Anemoi();
-  return anemoiClient.get(token);
+  if (token.length === 32) {
+    return anemoiClient.get(token);
+  }
+
+  return undefined;
 };
 
 app.get('/download', (req, res) => {
@@ -19,16 +23,15 @@ app.get('/download', (req, res) => {
     
     realDownload.then((val) => {
       if (val) {
-        console.log(now, 'serving', downloadToken, '->', val)
+        console.log(now, 'serving', downloadToken, '->', val);
         res.download(val);
-      }
-      else {
-        console.log(now, 'tried', downloadToken)
+      } else {
+        console.log(now, 'tried', downloadToken);
         res.sendStatus(403); // token is not valid
       }
     });
   } catch (e) {
-    console.log(now, 'failed request...', e)
+    console.log(now, 'failed request...', e);
     res.sendStatus(500);
   }
 });
