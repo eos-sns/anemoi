@@ -20,19 +20,23 @@ app.get('/download', (req, res) => {
   try{
     const downloadToken = req.query[downloadUrlParam].toString();
     const realDownload = retrieveActualLocation(downloadToken); // it's a promise
-    
-    realDownload.then((val) => {
-      if (val) {
-        console.log(now, 'serving', downloadToken, '->', val);
-        res.download(val);
-      } else {
-        console.log(now, 'tried', downloadToken);
-        res.sendStatus(403); // token is not valid
-      }
-    });
+
+    if (realDownload) {
+      realDownload.then((val) => {
+        if (val) {
+          console.log(now, 'serving', downloadToken, '->', val);
+          res.download(val);
+        } else {
+          console.log(now, 'tried', downloadToken);
+          res.sendStatus(403); // token is not valid
+        }
+      });
+    } else {
+      res.sendStatus(403); // token is not valid
+    }
   } catch (e) {
-    console.log(now, 'failed request...', e);
-    res.sendStatus(500);
+    console.log(now, 'token is not valid ...', e);
+    res.sendStatus(403);
   }
 });
 
