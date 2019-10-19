@@ -1,0 +1,29 @@
+{
+  "name": "anemoi",
+  "version": "1.0.0",
+  "description": "Translates download links to actual files",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "start-dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eos-sns/anemoi.git"
+  },
+  "author": "sirfoga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eos-sns/anemoi/issues"
+  },
+  "homepage": "https://github.com/eos-sns/anemoi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "memcached": "^2.2.2",
+    "mongodb": "^3.3.2",
+    "mongoose": "^5.7.1"
+  }
+}

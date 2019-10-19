@@ -1,0 +1,13 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "brace-style": [
+      2,
+      "stroustrup"
+    ],
+    "object-shorthand": "off"
+  }
+}
