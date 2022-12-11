@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/eos-sns/anemoi#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "memcached": "^2.2.2",
     "mongodb": "^3.3.2",
     "mongoose": "^5.7.5"
